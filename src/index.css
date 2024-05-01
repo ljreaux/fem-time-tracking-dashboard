@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+:root {
+  --clr-blue: hsl(246, 80%, 60%);
+  --clr-light-red-work: hsl(15, 100%, 70%);
+  --clr-soft-blue: hsl(195, 74%, 62%);
+  --clr-light-red-study: hsl(348, 100%, 68%);
+  --clr-lime-green: hsl(145, 58%, 55%);
+  --clr-violet: hsl(264, 64%, 52%);
+  --clr-soft-orange: hsl(43, 84%, 65%);
+  --clr-very-dark-blue: hsl(226, 43%, 10%);
+  --clr-dark-blue: hsl(235, 46%, 20%);
+  --clr-desaturated-blue: hsl(235, 45%, 61%);
+  --clr-pale-blue: hsl(236, 100%, 87%);
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  background-color: var(--clr-very-dark-blue);
+  color: white;
+}
+
+.page {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(4, 250px);
+  gap: 1rem;
+}
+.main-card {
+  grid-row: span 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-card-top {
+  width: 200px;
+  height: 300px;
+  background-color: var(--clr-blue);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.main-card-bottom {
+  width: 200px;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  background-color: var(--clr-dark-blue);
+  display: grid;
+  justify-content: start;
+  margin-top: -1rem;
+
+  flex-grow: 1;
+}
+
+.main-card-top img {
+  width: 30%;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.card-container {
+  /* padding: 1rem; */
+}
+
+.card {
+  background-color: var(--clr-dark-blue);
+  padding: 1rem;
+  display: grid;
+  width: 200px;
+  height: 200px;
+  border-radius: 1rem;
+  position: relative;
+}
+.top-card {
+  width: 200px;
+  height: 50px;
+  padding: 0 1rem 1rem 1rem;
+  border: none;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: -2rem;
+  overflow: hidden;
+}
+
+.top-card img {
+  width: 50px;
+  margin-top: -0.5rem;
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+}
