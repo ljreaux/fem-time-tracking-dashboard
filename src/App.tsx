@@ -24,7 +24,10 @@ function App() {
   return (
     <>
       <div className="page">
-        <MainCard handleClick={handleClick} />
+        <MainCard
+          handleClick={handleClick}
+          currentTimeFrame={currentTimeFrame}
+        />
         {currentData.map((cardData, i) => (
           <Card
             {...cardData}

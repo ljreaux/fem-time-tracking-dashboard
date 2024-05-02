@@ -2,27 +2,38 @@ import React from "react";
 
 export default function MainCard({
   handleClick,
+  currentTimeFrame,
 }: {
   handleClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  currentTimeFrame: "daily" | "weekly" | "monthly";
 }) {
   const userName = "Jeremy Robson";
+  const timeFrames = ["Daily", "Weekly", "Monthly"];
   return (
     <div className="main-card">
       <div className="main-card-top">
         <img src="/images/image-jeremy.png" alt="profile-img" />
-        <p>Report for</p>
-        <p>{userName}</p>
+        <div>
+          <p>Report for</p>
+          <h2>{userName}</h2>
+        </div>
       </div>
       <div className="main-card-bottom">
-        <button value={"daily"} onClick={handleClick}>
-          Daily
-        </button>
-        <button value={"weekly"} onClick={handleClick}>
-          Weekly
-        </button>
-        <button value={"monthly"} onClick={handleClick}>
-          Monthly
-        </button>
+        {timeFrames.map((value) => {
+          return (
+            <button
+              value={value.toLowerCase()}
+              onClick={handleClick}
+              style={
+                currentTimeFrame === value.toLowerCase()
+                  ? { color: "white" }
+                  : undefined
+              }
+            >
+              {value}
+            </button>
+          );
+        })}
       </div>
     </div>
   );

@@ -29,10 +29,10 @@ export default function Card({
 }) {
   const displayString =
     currentTimeFrame === "daily"
-      ? "Yesterday -"
+      ? "Yesterday - "
       : currentTimeFrame === "weekly"
-      ? "Last Week -"
-      : "Last Month -";
+      ? "Last Week - "
+      : "Last Month - ";
   const url = `/images/icon-${title.replace(/\s+/g, "-").toLowerCase()}.svg`;
   return (
     <div className="card-container">
@@ -49,8 +49,10 @@ export default function Card({
             <img src="/images/icon-ellipsis.svg" alt="expand" />
           </button>
         </div>
-        <p>{`${timeframes[currentTimeFrame].current}hrs`}</p>
-        <p>{`${displayString}${timeframes[currentTimeFrame].previous}hrs`}</p>
+        <div className="hours-container">
+          <h2 className="time">{`${timeframes[currentTimeFrame].current}hrs`}</h2>
+          <p className="previous">{`${displayString}${timeframes[currentTimeFrame].previous}hrs`}</p>
+        </div>
       </div>
     </div>
   );
